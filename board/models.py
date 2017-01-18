@@ -12,6 +12,7 @@ class Restaurant(models.Model):
     school = models.ForeignKey(School)
     rest_name = models.CharField(max_length=200)
     rest_time = models.CharField(max_length=200)
+    rest_place = models.CharField(max_length=200)
     def __str__(self):
         return self.rest_name
 
