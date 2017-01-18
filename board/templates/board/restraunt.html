@@ -99,17 +99,17 @@
     }
 
     .container{
-      border:5px solid black;
+/*      border:5px solid black;*/
     }
 
     .container>*{
     /*container 클래스의 모든 직계 자손들을 선택.*/
-      border:5px solid red;
+/*      border:5px solid red;*/
     }
 
     .container>.content>*{
-    /*container 클래스의 모든 직계 자손 중 content 클래스들을 선택.  */
-      border:5px solid green;
+/*    container 클래스의 모든 직계 자손 중 content 클래스들을 선택.  */
+/*      border:5px solid green;*/
     }
 
     .container .content{
@@ -143,6 +143,33 @@
         column-gap : 15px;
         column-rule: 2px solid gray;
     }    
+    .container>.content>main>.restraunt{
+        display:inline-block;
+        width : 200px;
+        padding-left : 5px;
+    }
+    input[type="checkbox"] {
+        display:none;
+    }
+    
+    .container>.content>main>.restraunt>label{
+        
+        display: block;
+        
+        margin-bottom : 10px;
+        padding : 5px;
+        border : 1px solid gray;
+        background-color: beige;
+    }
+    .container>.content>main>.restraunt>label:before{
+        display : none;
+    }
+    .restraunt input[type="checkbox"]:checked~.inner-content{
+        display : none;
+    }
+    .container>.content>main>.restraunt>inner-content{
+        display : none;
+    }    
         
     .container .content .inner{
       width:200px;
@@ -153,12 +180,12 @@
       left:-200px;
       position: relative;
     }
-        .container .content .inner h2{
-          text-align: center;
-          border-bottom : 1px solid gray;
-            padding-bottom: 10px;
-            margin-bottom : 10px;
-        }
+    .container .content .inner h2{
+      text-align: center;
+      border-bottom : 1px solid gray;
+        padding-bottom: 10px;
+        margin-bottom : 10px;
+    }
         
     .container .content aside{
       width:150px;
@@ -211,11 +238,86 @@
         <section class="content">
            <main>
                <div class="restraunt">
-                   <h3>감골식당</h3>
+                   <input type="checkbox" id="rest">
+                    <label for="rest"> 감골식당</label>                   
                    <div class="inner-content">
                        <div class="restraunt-location">
-                           운영시간 (중식) : 1130 ~ 1330 
-                           위치    : 관악사(919동)    
+                           <ul>
+                           <li>운영시간 (중식) : 1130 ~ 1330 </li>
+                           <li>위치    : 관악사(919동)       </li>
+                           </ul>
+                       </div>
+                       <div class="menu">
+                       <ul>
+                           <li>치킨 텐더 : 4,000</li>
+                           <li>뚝배기목살김치찌개 : 4,000</li>
+                       </ul>
+                       </div>
+                   </div>        
+               </div>
+                <div class="restraunt">
+                   <input type="checkbox" id="rest2">
+                    <label for="rest2"> 감골식당</label>                   
+                   <div class="inner-content">
+                       <div class="restraunt-location">
+                           <ul>
+                           <li>운영시간 (중식) : 1130 ~ 1330 </li>
+                           <li>위치    : 관악사(919동)       </li>
+                           </ul>
+                       </div>
+                       <div class="menu">
+                       <ul>
+                           <li>치킨 텐더 : 4,000</li>
+                           <li>뚝배기목살김치찌개 : 4,000</li>
+                       </ul>
+                       </div>
+                   </div>        
+               </div>
+               <div class="restraunt">
+                   <input type="checkbox" id="rest3">
+                    <label for="rest3"> 감골식당</label>                   
+                   <div class="inner-content">
+                       <div class="restraunt-location">
+                           <ul>
+                           <li>운영시간 (중식) : 1130 ~ 1330 </li>
+                           <li>위치    : 관악사(919동)       </li>
+                           </ul>
+                       </div>
+                       <div class="menu">
+                       <ul>
+                           <li>치킨 텐더 : 4,000</li>
+                           <li>뚝배기목살김치찌개 : 4,000</li>
+                       </ul>
+                       </div>
+                   </div>        
+               </div>
+               <div class="restraunt">
+                   <input type="checkbox" id="rest4">
+                    <label for="rest4"> 감골식당</label>                   
+                   <div class="inner-content">
+                       <div class="restraunt-location">
+                           <ul>
+                           <li>운영시간 (중식) : 1130 ~ 1330 </li>
+                           <li>위치    : 관악사(919동)       </li>
+                           </ul>
+                       </div>
+                       <div class="menu">
+                       <ul>
+                           <li>치킨 텐더 : 4,000</li>
+                           <li>뚝배기목살김치찌개 : 4,000</li>
+                       </ul>
+                       </div>
+                   </div>        
+               </div>
+               <div class="restraunt">
+                   <input type="checkbox" id="rest5">
+                    <label for="rest5"> 감골식당</label>                   
+                   <div class="inner-content">
+                       <div class="restraunt-location">
+                           <ul>
+                           <li>운영시간 (중식) : 1130 ~ 1330 </li>
+                           <li>위치    : 관악사(919동)       </li>
+                           </ul>
                        </div>
                        <div class="menu">
                        <ul>
