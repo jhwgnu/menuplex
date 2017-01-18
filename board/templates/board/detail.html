@@ -1,5 +1,6 @@
 {{school.school_name}}<br>
-
+<!-- {{school.school_url}} -->
+<a href = school.school_url>원본보기</a><br>
 <ul>
 {%for rest in school.restaurant_set.all %}
   {{rest.rest_name}}<br>
