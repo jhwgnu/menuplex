@@ -11,7 +11,7 @@ class School(models.Model):
 class Restaurant(models.Model):
     school = models.ForeignKey(School)
     rest_name = models.CharField(max_length=200)
-
+    rest_time = models.CharField(max_length=200)
     def __str__(self):
         return self.rest_name
 
@@ -19,4 +19,5 @@ class Meal(models.Model):
     school = models.ForeignKey(School)
     restaurant = models.ForeignKey(Restaurant)
     meal_name = models.CharField(max_length=200)
+    meal_time = models.CharField(max_length=200)
     price = models.IntegerField()

@@ -4,10 +4,10 @@
 
 <ul>
 {%for rest in school.restaurant_set.all %}
-  {{rest.rest_name}}<br>
+  {{rest.rest_name}}<br>{{rest.rest_time}}<br>
   <ul>
   {% for meal in rest.meal_set.all %}
-    <li>{{ meal.meal_name}} {{meal.price}}</li>
+    <li>{{ meal.meal_name}} {{meal.meal_time}} {{meal.price}}</li>
   {% endfor %}
   </ul>
 {% endfor %}
