@@ -1,14 +1,84 @@
-{{school.school_name}}<br>
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>대학 식당 찾기</title>
+    <link rel="stylesheet" href="tree_fontello/css/fontello.css">
+    <link rel="stylesheet" href="../../static/board.css">
+</head>
+<body>
 
-<a href = {{school.school_url}}><i>원본보기</i></a>
+    <div class="container">
 
-<ul>
-{%for rest in school.restaurant_set.all %}
-  {{rest.rest_name}}<br>{{rest.rest_place}}<br>{{rest.rest_time}}<br>
-  <ul>
-  {% for meal in rest.meal_set.all %}
-    <li>{{ meal.meal_name}} {{meal.meal_time}} {{meal.price}}</li>
-  {% endfor %}
-  </ul>
-{% endfor %}
-<ul>
+        <header>
+             <nav class ="navbar">
+                 <li><a href="index.html">Home   </a> </li>
+                 <li><a href="news">공지사항       </a> </li>
+                 <li><a href="contact">공지사항    </a> </li>
+                 <li><a href="about">우리에 대해서  </a> </li>
+            <h1>대학 식당 찾기</h1>
+
+             </nav>
+          <nav class="outer">
+           <a class="btn" href="#morning">조      식</a>
+           <a class="btn" href="#lunch">  중      식</a>
+           <a class="btn" href="#dinner"> 석      식</a>
+           <a class="btn" href="#allday"> 종      일</a>
+          </nav>
+        </header>
+        <section class="content">
+           <main>
+               {%if school_list %}
+               {%for school in school_list %}
+               {%ifequal 1 school.id  %}
+               {%for rest in school.restaurant_set.all %}
+               <div class="restraunt">
+                   <input type="checkbox" id="{{rest.id}}">
+                    <label for="{{rest.id}}"> {{rest.rest_name}}</label>
+                   <div class="inner-content">
+                       <div class="restraunt-location">
+                           <ul>
+                           <li>학교 : {{school.school_name}}  </li>
+                           <li>운영시간 : {{rest.rest_time}} </li>
+                           <li>위    치 : {{rest.rest_place}}       </li>
+                           </ul>
+                       </div>
+                       <div class="menu">
+                       <ul>
+                       {%for meal in rest.meal_set.all %}
+                           <li>{{meal.meal_name}} [{{meal.meal_time}}] : {{meal.price}}</li>
+                       {% endfor %}
+                       </ul>
+                       </div>
+                   </div>
+               </div>
+               {%endfor%}
+               {%endifequal%}
+               {%endfor%}
+               {%endif%}
+
+
+          </main>
+          <!-- <nav class="inner">
+              <div class="university">
+                  대학교 이름
+              </div>
+              <ul>
+                  <li> <a href="#SNU">서울대학교</a>    </li>
+                  <li> <a href="#KRU">고려대학교</a>    </li>
+                  <li> <a href="#HYU">한양대학교</a>    </li>
+                  <li> <a href="#KAIST">카이대학교</a>    </li>
+                  <li> <a href="#POSTECT">포스대학교</a>    </li>
+              </ul>
+          </nav> -->
+
+
+
+        </section>
+    <footer>
+      2017~ copyright : <br>
+      피로그래밍 팀 김주영 김지원 원종훈 윤성환 강상재
+    </footer>
+    </div>
+</body>
+</html>
