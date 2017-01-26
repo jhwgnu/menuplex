@@ -5,6 +5,7 @@ class School(models.Model):
     school_name = models.CharField(max_length=200)
     school_url = models.CharField(max_length=200)
     school_logo = models.ImageField()
+    school_short = models.CharField(max_length = 10, default = '', primary_key=True)
 
     def __str__(self):
         return self.school_name

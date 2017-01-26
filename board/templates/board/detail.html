@@ -30,7 +30,7 @@
            <main>
                {%if school_list %}
                {%for school in school_list %}
-               {%ifequal 1 school.id  %}
+               <!-- {%ifequal 1 school.id  %} -->
                {%for rest in school.restaurant_set.all %}
                <div class="restraunt">
                    <input type="checkbox" id="{{rest.id}}">
@@ -53,7 +53,7 @@
                    </div>
                </div>
                {%endfor%}
-               {%endifequal%}
+               <!-- {%endifequal%} -->
                {%endfor%}
                {%endif%}
 

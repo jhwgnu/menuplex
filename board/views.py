@@ -10,8 +10,8 @@ def index(request):
     return render(request, 'board/index.html', context)
 
 
-def detail(request, school_id):
-    school = get_object_or_404(School, pk=school_id)
+def detail(request, school_short):
+    school = get_object_or_404(School, pk=school_short)
     school_list = School.objects.all()
     context = {'school_list': school_list}
     return render(request, 'board/detail.html', context)
