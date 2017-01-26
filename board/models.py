@@ -22,5 +22,10 @@ class Meal(models.Model):
     school = models.ForeignKey(School)
     restaurant = models.ForeignKey(Restaurant)
     meal_name = models.CharField(max_length=200)
-    meal_time = models.CharField(max_length=200)
+    meal_time = models.CharField(max_length=100, choices=(
+        ('조식','조식'),
+        ('중식','중식'),
+        ('석식','석식'),
+        ('상시','상시'),
+    ))
     price = models.IntegerField()
