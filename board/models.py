@@ -29,3 +29,6 @@ class Meal(models.Model):
         ('상시','상시'),
     ))
     price = models.IntegerField()
+
+    def __str__(self):
+        return self.school.school_name + '/' + self.restaurant.rest_name + '/' + self.meal_name
