@@ -16,8 +16,15 @@ class MealAdmin(admin.ModelAdmin):
     list_display_links = ['meal_name']
     list_filter = ['school']
 
+class RestaurantAdmin(admin.ModelAdmin):
+    def get_school_name(self, restaurant):
+        return restaurant.school
+
+    list_display = ['get_school_name', 'rest_name', 'id']
+    list_display_links = ['rest_name']
+    list_filter = ['school']
 
 
 admin.site.register(School)
-admin.site.register(Restaurant)
+admin.site.register(Restaurant, RestaurantAdmin)
 admin.site.register(Meal, MealAdmin)
