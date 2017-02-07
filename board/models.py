@@ -28,6 +28,10 @@ class Meal(models.Model):
         ('상시','상시'),
     ))
     price = models.IntegerField()
+    meal_date = models.DateTimeField()
 
     def __str__(self):
         return self.meal_name
+
+
+
