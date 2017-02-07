@@ -13,8 +13,6 @@ class School(models.Model):
 class Restaurant(models.Model):
     school = models.ForeignKey(School)
     rest_name = models.CharField(max_length=200)
-    rest_time = models.CharField(max_length=200)
-    rest_place = models.CharField(max_length=200)
 
     def __str__(self):
         return self.rest_name
@@ -32,4 +30,4 @@ class Meal(models.Model):
     price = models.IntegerField()
 
     def __str__(self):
-        return self.school.school_name + '/' + self.restaurant.rest_name + '/' + self.meal_name
+        return self.meal_name
