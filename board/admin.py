@@ -20,8 +20,14 @@ class RestaurantAdmin(admin.ModelAdmin):
     def get_school_name(self, restaurant):
         return restaurant.school
 
-    list_display = ['get_school_name', 'rest_name', 'id']
-    list_display_links = ['rest_name']
+    def get_rest_name(self, restaurant):
+        return restaurant.rest_name
+
+    get_school_name.short_description = '학교명'
+    get_rest_name.short_description = '식당명'
+
+    list_display = ['get_school_name', 'get_rest_name', 'id']
+    list_display_links = ['get_rest_name']
     list_filter = ['school']
 
 
